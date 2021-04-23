@@ -3,7 +3,7 @@ public class Main {
         BankAccount cuentaDeJuan = new BankAccount();
 
         cuentaDeJuan.accountHolder = "Juan Roman";
-        cuentaDeJuan.accountType = "nomina";
+        cuentaDeJuan.accountType = TypeAccount.RATE;
         cuentaDeJuan.balance = 2000.56;
 
         System.out.println("Saldo " + cuentaDeJuan.balance);
@@ -33,7 +33,7 @@ public class Main {
         cuentaDeJuan.setMoney(100);
         System.out.println("Despues tenemos " + cuentaDeJuan.balance);
 
-        cuentaDeJuan.changeTypeAccount("ahorro");
+        //cuentaDeJuan.changeTypeAccount("ahorro");
         System.out.println("Tipo de cuenta " + cuentaDeJuan.accountType);
 
         System.out.println("-------------------------------------------");
@@ -50,10 +50,21 @@ public class Main {
         double result = calculator.calculateMean(2.6,2.8,2.9,100);
         System.out.println("Resultado " +result);
 
-        BankAccount cuentaPaul = new BankAccount("Paul Ramon","Ahorro",100000);
-        BankAccount cuentaJulio = new BankAccount("Julio Ramon", BankAccount.TIPO_AHORRO,100000);
+        BankAccount cuentaPaul = new BankAccount("Paul Ramon",TypeAccount.MORTGAGE,100000);
+        BankAccount cuentaJulio = new BankAccount("Julio Ramon", TypeAccount.PAYROLL,100000);
 
         System.out.println(" Saldo " + cuentaPaul.balance);
         System.out.println(" Saldo " + cuentaJulio.balance);
+
+        System.out.println("-------------------------------------------");
+        BankAccount accountAna = new BankAccount("Ana Maldodano",TypeAccount.CHILDREN,230.50);
+        System.out.println("Account balance " + accountAna.balance + " " + accountAna.accountType);
+
+        System.out.println("\n--------------------------------------------");
+        Informer informer = new Informer();
+        informer.showScreen(52);
+        informer.showScreen(265.45);
+        informer.showScreen("Baby Noelia");
+        informer.showScreen("I love you",Informer.COLOUR_GREEN);
 
     }}
