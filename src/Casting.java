@@ -1,4 +1,4 @@
-public class Casteo {
+public class Casting {
     public static void main(String[] args) {
         int variableInt = 10;
         float variableFloat = variableInt;
